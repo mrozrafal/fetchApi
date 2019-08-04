@@ -1,22 +1,43 @@
 @import "_normalize";
 @import "_variables";
 
-
 html {
   box-sizing: border-box;
 }
 
-*, *:before, *:after {
+*,
+*:before,
+*:after {
   box-sizing: inherit;
 }
 
 body {
-  color: #fff;
   background: #000;
 }
-.main{
-display:flex;
-justify-content: center;
-align-items: center;
-min-height: 100vh;
+.main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+.list {
+  list-style-type: none;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+
+  &__item {
+    display: block;
+
+    background: #fefefe;
+    padding: 16px;
+    margin: 8px;
+  }
+  &__link {
+    display: flex;
+    justify-content: center;
+    text-decoration: none;
+  }
+  &__description {
+    color: #000;
+  }
 }

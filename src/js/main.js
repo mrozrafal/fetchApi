@@ -24,7 +24,15 @@ fetch('https://api.github.com/users/mrozrafal/repos?sort=updated&direction=desc'
 .then(resp => {
   const repos = resp;
 for (const repo of repos){
-list.innerHTML+=`<li><a href ="${repo.html_url}">${repo.name}</a> </li>`;
+  const {description, html_url, name} = repo;
+list.innerHTML+= `
+<li class="list__item">
+<a class="list__link" href ="${html_url}">${name}</a>
+<p class="link__description">
+${description ? description : "no description" } 
+</p>
+</li>
+`;
 }
 })
 
